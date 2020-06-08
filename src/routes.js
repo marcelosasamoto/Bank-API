@@ -7,7 +7,7 @@ const TransacoesController = require("./controllers/TransacoesController");
 //Rotas do User
 routes.get("/user/showall",UserController.showall);
 routes.get("/user/:id",UserController.user);
-routes.get("/createuser",UserController.store);
+routes.post("/createuser",UserController.store);
 
 
 //Rotas da Transacoes
