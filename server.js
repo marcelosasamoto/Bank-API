@@ -6,7 +6,7 @@ require('dotenv/config');
 
 app.use(express.json());
 mongoose.connect(
-    'mongodb://0.0.0.0:27017/bankDB',
+    process.env.DB_LINK,
     { useUnifiedTopology: true, useNewUrlParser: true,'useFindAndModify': false}
 
 );
@@ -15,4 +15,5 @@ requireDir('./src/models');
 
 app.use('/api',require("./src/routes"));    //Rota da api
 
-app.listen( 3200)
+
+app.listen(3200, process.env.APP_URL)
