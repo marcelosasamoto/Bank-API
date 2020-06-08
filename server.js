@@ -16,4 +16,4 @@ requireDir('./src/models');
 app.use('/api',require("./src/routes"));    //Rota da api
 
 
-app.listen(3200, process.env.APP_URL)
+app.listen(process.env.PORT, process.env.APP_URL)
