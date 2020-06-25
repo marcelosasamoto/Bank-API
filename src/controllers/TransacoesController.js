@@ -23,7 +23,7 @@ module.exports = {
                         { $push: 
                             { transacao: {
                                 tipo:req.body.transacao.tipo,
-                                valor:req.body.transacao.valor,
+                                valor:-req.body.transacao.valor,
                                 data:req.body.transacao.data,
                                 descricao:req.body.transacao.descricao,
                                 cpf_destinatario:req.body.transacao.cpf_destinatario,
@@ -44,7 +44,7 @@ module.exports = {
                                     { $push: 
                                         { transacao: {
                                             tipo:req.body.transacao.tipo,
-                                            valor:req.body.transacao.valor,
+                                            valor:+req.body.transacao.valor,
                                             data:req.body.transacao.data,
                                             descricao:req.body.transacao.descricao,
                                             cpf_destinatario:req.body.transacao.cpf_destinatario,
@@ -92,6 +92,18 @@ module.exports = {
         })
         .catch(function(err){
             return res.sendStatus(400)
+        })
+    },
+    async Pagarfatura(req,res){
+        await User.findByIdAndUpdate(req.params.id,{
+            fatura:0,
+            cartao_credito:1000
+        })
+        .then(q=>{
+            return res.json({message:'Fatura paga com sucesso'})
+        })
+        .catch(w=>{
+            console.log('errrooooo')
         })
     }
 

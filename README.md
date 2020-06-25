@@ -10,6 +10,27 @@ Esse repositorio esta sendo desenvolvido para fazer algumas atividades básicas 
 
 * Ao acessar as rotas remover os [ ... ] Ex:  `https://bank-api-one.herokuapp.com/api/j4ugf82jso/newtransaction ` 
 
+
+
+#### Criar conta no Bank-API 
+
+**(Metodo POST)**  `https://bank-api-one.herokuapp.com/api/user/[ID_DO_USUARIO]/createuser`
+
+##### Estrutura do JSON
+
+```
+{
+	"name":"joao",
+	"email":"joao@email.com",
+	"password":"sasa",
+	"cpf":10000000003,
+	"address":"Belem - PA",
+	"bday":"1999-12-30"
+} 
+```
+
+
+
 #### Dados da conta do usuario
 
 **(Metodo GET)** `https://bank-api-one.herokuapp.com/api/user/[ID_DO_USUARIO]`
@@ -66,23 +87,6 @@ Esse repositorio esta sendo desenvolvido para fazer algumas atividades básicas 
 ```
 
 
-
-#### Criar conta no Bank-API 
-
-**(Metodo POST)**  `https://bank-api-one.herokuapp.com/api/user/[ID_DO_USUARIO]/createuser`
-
-##### Estrutura do JSON
-
-```
-{
-	"name":"joao",
-	"email":"joao@email.com",
-	"password":"sasa",
-	"cpf":10000000003,
-	"address":"Belem - PA",
-	"bday":"1999-12-30"
-} 
-```
 
 
 
@@ -156,6 +160,20 @@ Esse repositorio esta sendo desenvolvido para fazer algumas atividades básicas 
 		"cpf_destinatario":10000000002,
 		"categoria": "none"
 	}
+}
+```
+
+
+
+#### Pagar Fatura
+
+**(Metodo POST)** `https://bank-api-one.herokuapp.com/api/user/[ID_DO_USUARIO]/pagarfatura`
+
+##### Resultado
+
+```json
+{
+  "message": "Fatura paga com sucesso"
 }
 ```
 
