@@ -20,9 +20,13 @@ routes.post("/user/acess/",CardsController.acessbank);
 routes.get("/user/:id/transactions",TransacoesController.Transactions);
 routes.post("/user/:id/newtransaction",TransacoesController.newTransaction);
 
+routes.post("/user/:id/transactionmodify",TransacoesController.transactionmodify);
+
 //Rota de Deposito
 routes.get("/user/:id/pagarfatura",TransacoesController.Pagarfatura);
 
+//Rota de Categorizar
+routes.post("/user/categorizar",TransacoesController.upcategoria);
 
 
 
